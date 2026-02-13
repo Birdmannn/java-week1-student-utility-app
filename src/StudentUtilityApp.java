@@ -5,6 +5,7 @@ public class StudentUtilityApp {
         runMenu();
     }
 
+    // The Student Utility App
     public static void runMenu() {
         System.out.println("========== STUDENT UTILITY APP ===========");
         System.out.println("\n");
@@ -38,6 +39,7 @@ public class StudentUtilityApp {
         System.out.println("Thank you for using the app.");
     }
 
+    // A helper method that prints out all the options in the menu
     public static void printOptions() {
         System.out.println("    1. Add two numbers.");
         System.out.println("    2. Check if a number is EVEN or ODD.");
@@ -46,6 +48,7 @@ public class StudentUtilityApp {
         System.out.println("    5. Exit.");
     }
 
+    // The core method that handles all options in the menu
     public static void processInput(int index) {
         Scanner in = new Scanner(System.in);
         switch (index) {
@@ -78,6 +81,7 @@ public class StudentUtilityApp {
         }
     }
 
+    // Adds two numbers from a string. Parses the string into two integer values
     public static void addTwoNumbers(String numbers) {
         String[] values = numbers.split(" ");
         assert values.length >= 2 : "Input length is < 2";
@@ -88,11 +92,13 @@ public class StudentUtilityApp {
         System.out.println();
     }
 
+    // Takes in an integer and prints if that integer is EVEN or ODD
     public static void evenOrOdd(int value) {
         String str = value % 2 == 0 ? "EVEN" : "ODD";
         System.out.println(value + " is an " + str + " number.");
     }
 
+    //  Parses the string into two integer values, and prints out the corresponding range of values
     public static void processRange(String numbers) {
         String[] values = numbers.split(" ");
         assert values.length >= 2 : "Input length is < 2";
@@ -104,6 +110,7 @@ public class StudentUtilityApp {
         System.out.println(end);
     }
 
+    // Processes the day of the week based on the corresponding input argument
     public static void processDayOfTheWeek(int val) {
         String day = switch (val) {
             case 1 -> "Monday";
@@ -112,7 +119,8 @@ public class StudentUtilityApp {
             case 4 -> "Thursday";
             case 5 -> "Friday";
             case 6 -> "Saturday";
-            default -> "Sunday";
+            case 7 -> "Sunday";
+            default -> "Invalid day";
         };
         System.out.println(day);
     }
